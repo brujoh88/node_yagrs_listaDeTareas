@@ -10,7 +10,7 @@ let comando = argv._[0]
 switch (comando) {
   // Crea una nueva tarea
   case 'crear':
-    let tarea = porHacer.crear(argv.filtro)
+    let tarea = porHacer.crear(argv.descripcion)
     console.log('Ingreso: ', tarea)
     porHacer.guardarDB()
     break
