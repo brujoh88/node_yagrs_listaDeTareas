@@ -30,26 +30,23 @@ const crear = (descripcion) => {
 
 const getlistado = (completado) => {
   cargarDB()
-  if (completado == 'all') {
-    return listadoPorHacer
-  } else {
-    switch (completado) {
-      case 'true':
-      case 't':
-        let listadoTrue = []
-        listadoTrue = listadoPorHacer.filter((dato) => dato.completado == true)
-        return listadoTrue
+  switch (completado) {
+    case 'all':
+      return listadoPorHacer
 
-      case 'false':
-      case 'f':
-        let listadoFalse = []
-        listadoFalse = listadoPorHacer.filter(
-          (dato) => dato.completado == false
-        )
-        return listadoFalse
-      default:
-        return 'Comando erroneo'
-    }
+    case 'true':
+    case 't':
+      let listadoTrue = []
+      listadoTrue = listadoPorHacer.filter((dato) => dato.completado == true)
+      return listadoTrue
+
+    case 'false':
+    case 'f':
+      let listadoFalse = []
+      listadoFalse = listadoPorHacer.filter((dato) => dato.completado == false)
+      return listadoFalse
+    default:
+      return 'Comando erroneo'
   }
 }
 
@@ -60,7 +57,11 @@ const actualizar = (descripcion, completado = true) => {
     (tarea) => tarea.descripcion === descripcion
   )
   if (index >= 0) {
-    listadoPorHacer[index].completado = completado
+    if (completado === 'false') {
+      listadoPorHacer[index].completado = false
+    } else if (completado === 'true') {
+      listadoPorHacer[index].completado = true
+    }
     guardarDB()
     return `Actualizado tarea: ${descripcion} ==> ${completado}`
   } else {

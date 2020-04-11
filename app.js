@@ -18,7 +18,7 @@ switch (comando) {
   // Lista las tareas
   case 'listar':
     let listado = porHacer.getlistado(argv.filtro)
-    if (typeof listado !== 'string') {
+    if (typeof listado == 'object') {
       for (let i = 0; i < listado.length; i++) {
         console.log('====================Por hacer===================='.green)
         console.log(listado[i].descripcion)
