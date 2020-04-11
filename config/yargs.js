@@ -11,10 +11,10 @@ const completado = {
 
 //Tear modulo YARGS
 const argv = require('yargs')
-  .command('crear', 'Crear un elemento por hacer', {
+  .command('crear', 'Crea una tarea por hacer.', {
     descripcion,
   })
-  .command('actualizar', 'Actualia el estado completo de una tarea', {
+  .command('actualizar', 'Actualiza el estado de una tarea', {
     descripcion,
     completado,
   })
@@ -22,7 +22,7 @@ const argv = require('yargs')
     filtro: {
       alias: 'f',
       describe:
-        'BANDERAS [all: Todas las tareas - false/f: Tareas imcompleta - true/t: Tareas compeltas]',
+        '-- [all: Todas las tareas - false/f: Tareas imcompleta - true/t: Tareas compeltas]',
       demand: true,
     },
   })
