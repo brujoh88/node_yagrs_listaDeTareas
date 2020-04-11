@@ -22,7 +22,7 @@ const argv = require('yargs')
     filtro: {
       alias: 'f',
       describe:
-        '-- [all: Todas las tareas - false/f: Tareas imcompleta - true/t: Tareas compeltas]',
+        '-- [all/a: Todas las tareas - false/f: Tareas imcompleta - true/t: Tareas compeltas]',
       demand: true,
     },
   })

@@ -32,6 +32,7 @@ const getlistado = (completado) => {
   cargarDB()
   switch (completado) {
     case 'all':
+    case 'a':
       return listadoPorHacer
 
     case 'true':

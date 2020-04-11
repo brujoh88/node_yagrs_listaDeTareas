@@ -11,7 +11,7 @@ switch (comando) {
   // Crea una nueva tarea
   case 'crear':
     let tarea = porHacer.crear(argv.descripcion)
-    console.log('Ingreso: ', tarea)
+    console.log('Ingreso: ', tarea.descripcion)
     porHacer.guardarDB()
     break
 
