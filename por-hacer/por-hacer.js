@@ -60,7 +60,7 @@ const actualizar = (descripcion, completado = true) => {
   if (index >= 0) {
     if (completado === 'false') {
       listadoPorHacer[index].completado = false
-    } else if (completado === 'true') {
+    } else if (completado === true || completado === 'true') {
       listadoPorHacer[index].completado = true
     }
     guardarDB()
